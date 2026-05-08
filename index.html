@@ -299,7 +299,7 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
       <div class="portfolio-item" data-cat="remeslnici">
-        <a href="https://dousa-elektro.cz" target="_blank" rel="noopener" class="block group">
+        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://dousa-elektro.cz','Dousa Elektro')">
           <div class="mock-browser glow-t">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -310,11 +310,11 @@
             </div>
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Dousa Elektro</h4><span class="tag tag-teal text-[10px]">Řemeslník</span></div>
-          <p class="text-xs text-ivory/40 mt-1">dousa-elektro.cz &rarr;</p>
-        </a>
+          <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
+        </button>
       </div>
       <div class="portfolio-item" data-cat="firmy">
-        <a href="https://ninja.webdo24.cz" target="_blank" rel="noopener" class="block group">
+        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://ninja.webdo24.cz','Ninja')">
           <div class="mock-browser">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -325,8 +325,8 @@
             </div>
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Ninja</h4><span class="tag tag-coral text-[10px]">Služby</span></div>
-          <p class="text-xs text-ivory/40 mt-1">ninja.webdo24.cz &rarr;</p>
-        </a>
+          <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
+        </button>
       </div>
       <div class="portfolio-item" data-cat="firmy">
         <div class="mock-browser"><div class="mock-chrome"><span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span><div class="mock-url"></div></div><div class="mock-content" style="background:linear-gradient(135deg,#0d4268,#00A89B);"><div class="p-5"><div class="h-2.5 w-2/3 rounded-full bg-white/30 mb-3"></div><div class="h-2 w-1/2 rounded-full bg-white/15 mb-4"></div><div class="grid grid-cols-3 gap-2"><div class="aspect-square rounded-lg bg-white/[0.06]"></div><div class="aspect-square rounded-lg bg-white/[0.06]"></div><div class="aspect-square rounded-lg bg-white/[0.06]"></div></div></div></div></div>
@@ -339,7 +339,7 @@
         <p class="text-xs text-ivory/40 mt-1">Dodáno za 22 hodin</p>
       </div>
       <div class="portfolio-item" data-cat="wellness">
-        <a href="https://paddleboardy-milada.cz" target="_blank" rel="noopener" class="block group">
+        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://paddleboardy-milada.cz','Paddleboardy Milada')">
           <div class="mock-browser">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -350,8 +350,8 @@
             </div>
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Paddleboardy Milada</h4><span class="tag tag-green text-[10px]">Sport</span></div>
-          <p class="text-xs text-ivory/40 mt-1">paddleboardy-milada.cz &rarr;</p>
-        </a>
+          <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
+        </button>
       </div>
       <div class="portfolio-item" data-cat="wellness">
         <div class="mock-browser"><div class="mock-chrome"><span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span><div class="mock-url"></div></div><div class="mock-content" style="background:linear-gradient(135deg,#a855f7,#7e22ce);"><div class="p-5"><div class="h-2.5 w-2/3 rounded-full bg-white/30 mb-3"></div><div class="h-2 w-1/2 rounded-full bg-white/15 mb-4"></div><div class="grid grid-cols-3 gap-2"><div class="aspect-square rounded-lg bg-white/[0.12]"></div><div class="aspect-square rounded-lg bg-white/[0.12]"></div><div class="aspect-square rounded-lg bg-white/[0.12]"></div></div></div></div></div>
@@ -974,19 +974,6 @@
             <input id="f_name" type="text" class="form-input" placeholder="např. Pekárna U Novotných">
             <p id="f_name_err" class="text-xs mt-1.5 hidden text-coral">Vyplňte prosím název firmy.</p>
           </div>
-          <div>
-            <label class="block text-sm font-bold mb-2 text-ivory/55">Hlavní cíl webu *</label>
-            <select id="f_goal" class="form-input cursor-pointer">
-              <option value="" disabled selected>Vyberte hlavní cíl...</option>
-              <option>Získávání poptávek a telefonátů</option>
-              <option>Prodej produktů online (e-shop)</option>
-              <option>Budování značky a důvěry</option>
-              <option>Online rezervace termínů</option>
-              <option>Portfolio a prezentace prací</option>
-              <option>Jiný cíl</option>
-            </select>
-            <p id="f_goal_err" class="text-xs mt-1.5 hidden text-coral">Vyberte prosím hlavní cíl.</p>
-          </div>
         </div>
         <button onclick="toStep(2)" class="btn-coral w-full py-4 mt-8 text-base font-black rounded-2xl">Pokračovat k platbě &rarr;</button>
       </div>
@@ -997,7 +984,6 @@
         <div class="rounded-2xl p-6 mb-4 space-y-3 bg-navy-900">
           <div class="flex justify-between items-center"><span class="text-sm text-ivory/50">Model</span><span class="font-bold" id="s_model">—</span></div>
           <div class="flex justify-between items-center"><span class="text-sm text-ivory/50">Firma</span><span class="font-bold" id="s_name">—</span></div>
-          <div class="flex justify-between items-center"><span class="text-sm text-ivory/50">Cíl webu</span><span class="font-bold" id="s_goal">—</span></div>
           <div class="border-t border-white/[0.06] pt-3 mt-3"></div>
           <div class="flex justify-between items-center"><span class="text-lg font-black">Celkem k platbě</span><span class="text-3xl font-black text-teal" id="s_price">19 900 Kč</span></div>
         </div>
@@ -1039,6 +1025,19 @@
           <p class="text-sm text-ivory/50">Teď nám řekněte detaily, aby web seděl perfektně.</p>
         </div>
         <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-bold mb-2 text-ivory/55">Hlavní cíl webu *</label>
+            <select id="f_goal" class="form-input cursor-pointer">
+              <option value="" disabled selected>Vyberte hlavní cíl...</option>
+              <option>Získávání poptávek a telefonátů</option>
+              <option>Prodej produktů online (e-shop)</option>
+              <option>Budování značky a důvěry</option>
+              <option>Online rezervace termínů</option>
+              <option>Portfolio a prezentace prací</option>
+              <option>Jiný cíl</option>
+            </select>
+            <p id="f_goal_err" class="text-xs mt-1.5 hidden text-coral">Vyberte prosím hlavní cíl.</p>
+          </div>
           <div>
             <label class="block text-sm font-bold mb-2 text-ivory/55">Brandová barva</label>
             <div class="flex gap-3 items-center">
