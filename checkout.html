@@ -305,10 +305,9 @@ function renderCheckout() {
         <span class="text-3xl font-black" style="color:${accentHex}" id="total-price">${model.priceLabel}</span>
       </div>
       <p class="text-xs text-ivory/40 mb-4">Po zaplacení vám přijde potvrzení e-mailem a do 24 hodin začneme na vašem webu pracovat.</p>
-      <a id="pay-btn" href="${model.stripeUrl}" class="btn-${accent === 'yellow' ? 'teal' : accent} w-full py-4 text-base font-black rounded-2xl text-center block" target="_blank" rel="noopener" style="${accent === 'yellow' ? 'background:linear-gradient(135deg,#FACC15,#EAB308);color:#051D2E' : ''}">
-        ${isContact ? 'Odeslat poptávku &rarr;' : 'Zaplatit a začít &rarr;'}
-      </a>
-      ${isContact ? '<p class="text-xs text-ivory/30 mt-2 text-center">Kontaktujeme vás do 30 minut s potvrzením a dalšími kroky.</p>' : ''}
+      <button id="orderBtn" class="btn-${accent === 'yellow' ? 'teal' : accent} w-full py-4 text-base font-black rounded-2xl text-center block cursor-pointer" style="${accent === 'yellow' ? 'background:linear-gradient(135deg,#FACC15,#EAB308);color:#051D2E' : ''}">
+        Objednat
+      </button>
     </div>
 
     <!-- Trust -->
@@ -338,8 +337,34 @@ function updateTotal() {
   if (priceEl) priceEl.textContent = totalText;
 }
 
+function setupPaymentButton() {
+  const btn = document.getElementById('orderBtn');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    const res = await fetch(
+      'https://billing.webdo24.cz/api/stripe/create-checkout-session',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          project_id: 'webdo24-main'
+        })
+      }
+    );
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Nepodařilo se vytvořit checkout.');
+    }
+  });
+}
+
 function init() {
   renderCheckout();
+  setupPaymentButton();
 }
 
 document.addEventListener('DOMContentLoaded', init);
