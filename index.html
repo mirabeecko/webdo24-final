@@ -38,6 +38,23 @@
 <!-- Notifications -->
 <div id="notif-wrap" aria-live="polite"></div>
 
+<!-- Portfolio Modal -->
+<div id="portfolio-modal" class="fixed inset-0 z-[100] hidden" aria-hidden="true">
+  <div class="absolute inset-0 bg-navy-900/90 backdrop-blur-md" id="portfolio-modal-backdrop"></div>
+  <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-6xl h-[85vh] flex flex-col rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style="background:#0a1a2a;">
+      <div class="flex items-center gap-3 px-4 py-3 border-b border-white/10 bg-navy-900/80 flex-shrink-0">
+        <button id="portfolio-modal-close" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-coral/20 flex items-center justify-center text-ivory/60 hover:text-coral transition text-lg leading-none" aria-label="Zavřít">&times;</button>
+        <div class="flex-1 bg-white/[0.06] rounded-md px-3 py-1.5 text-xs text-ivory/40 truncate" id="portfolio-modal-url">webdo24.cz</div>
+        <a id="portfolio-modal-external" href="#" target="_blank" rel="noopener" class="text-xs text-teal hover:text-teal-400 transition font-semibold whitespace-nowrap">Otevřít v novém okně &nearr;</a>
+      </div>
+      <div class="flex-1 relative overflow-hidden bg-white">
+        <iframe id="portfolio-modal-iframe" src="" style="width:100%;height:100%;border:0;" title="Náhled webu"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Mobile sticky CTA -->
 <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-gradient-to-t from-navy-900 via-navy-900/95 to-transparent border-t border-white/5 lg:hidden">
   <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-teal text-navy-900 font-extrabold shadow-glow text-sm">
@@ -299,7 +316,7 @@
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
       <div class="portfolio-item" data-cat="remeslnici">
-        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://dousa-elektro.cz','Dousa Elektro')">
+        <div class="block group cursor-pointer" onclick="openPortfolioModal('https://dousa-elektro.cz','Dousa Elektro')">
           <div class="mock-browser glow-t">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -311,10 +328,10 @@
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Dousa Elektro</h4><span class="tag tag-teal text-[10px]">Řemeslník</span></div>
           <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
-        </button>
+        </div>
       </div>
       <div class="portfolio-item" data-cat="firmy">
-        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://ninja.webdo24.cz','Ninja')">
+        <div class="block group cursor-pointer" onclick="openPortfolioModal('https://ninja.webdo24.cz','Ninja')">
           <div class="mock-browser">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -326,7 +343,7 @@
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Ninja</h4><span class="tag tag-coral text-[10px]">Služby</span></div>
           <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
-        </button>
+        </div>
       </div>
       <div class="portfolio-item" data-cat="firmy">
         <div class="mock-browser"><div class="mock-chrome"><span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span><div class="mock-url"></div></div><div class="mock-content" style="background:linear-gradient(135deg,#0d4268,#00A89B);"><div class="p-5"><div class="h-2.5 w-2/3 rounded-full bg-white/30 mb-3"></div><div class="h-2 w-1/2 rounded-full bg-white/15 mb-4"></div><div class="grid grid-cols-3 gap-2"><div class="aspect-square rounded-lg bg-white/[0.06]"></div><div class="aspect-square rounded-lg bg-white/[0.06]"></div><div class="aspect-square rounded-lg bg-white/[0.06]"></div></div></div></div></div>
@@ -339,7 +356,7 @@
         <p class="text-xs text-ivory/40 mt-1">Dodáno za 22 hodin</p>
       </div>
       <div class="portfolio-item" data-cat="wellness">
-        <button class="block group text-left w-full cursor-pointer" onclick="openPortfolioModal('https://paddleboardy-milada.cz','Paddleboardy Milada')">
+        <div class="block group cursor-pointer" onclick="openPortfolioModal('https://paddleboardy-milada.cz','Paddleboardy Milada')">
           <div class="mock-browser">
             <div class="mock-chrome">
               <span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span>
@@ -351,7 +368,7 @@
           </div>
           <div class="mt-4 flex items-center justify-between"><h4 class="font-black text-sm group-hover:text-teal transition">Paddleboardy Milada</h4><span class="tag tag-green text-[10px]">Sport</span></div>
           <p class="text-xs text-ivory/40 mt-1">Klikněte pro náhled &rarr;</p>
-        </button>
+        </div>
       </div>
       <div class="portfolio-item" data-cat="wellness">
         <div class="mock-browser"><div class="mock-chrome"><span class="mock-dot bg-[#ff5f56]"></span><span class="mock-dot bg-[#ffbd2e]"></span><span class="mock-dot bg-[#27c93f]"></span><div class="mock-url"></div></div><div class="mock-content" style="background:linear-gradient(135deg,#a855f7,#7e22ce);"><div class="p-5"><div class="h-2.5 w-2/3 rounded-full bg-white/30 mb-3"></div><div class="h-2 w-1/2 rounded-full bg-white/15 mb-4"></div><div class="grid grid-cols-3 gap-2"><div class="aspect-square rounded-lg bg-white/[0.12]"></div><div class="aspect-square rounded-lg bg-white/[0.12]"></div><div class="aspect-square rounded-lg bg-white/[0.12]"></div></div></div></div></div>
