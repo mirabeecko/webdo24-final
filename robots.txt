@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /checkout.html
+
+Sitemap: https://www.webdo24.cz/sitemap.xml
