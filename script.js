@@ -241,6 +241,11 @@ function toStep(n){
     document.getElementById('s_name').textContent = name;
     updateModelPrice();
   }
+  if (n === 4) {
+    const goal = document.getElementById('f_goal').value;
+    if (!goal) { document.getElementById('f_goal_err').classList.remove('hidden'); return; }
+    document.getElementById('f_goal_err').classList.add('hidden');
+  }
   document.getElementById('step'+currentStep).classList.add('hidden');
   document.getElementById('step'+n).classList.remove('hidden');
   // update indicators (3 steps: Výběr / Platba / Brief)
@@ -312,36 +317,6 @@ if (fPicker && fColor) {
   fPicker.addEventListener('input', () => fColor.value = fPicker.value);
   fColor.addEventListener('input', () => fPicker.value = fColor.value);
 }
-
-/* ===== Portfolio Modal ===== */
-const portfolioModal = document.getElementById('portfolio-modal');
-const portfolioModalIframe = document.getElementById('portfolio-modal-iframe');
-const portfolioModalUrl = document.getElementById('portfolio-modal-url');
-const portfolioModalExternal = document.getElementById('portfolio-modal-external');
-const portfolioModalClose = document.getElementById('portfolio-modal-close');
-const portfolioModalBackdrop = document.getElementById('portfolio-modal-backdrop');
-
-function openPortfolioModal(url, title) {
-  if (!portfolioModal) return;
-  portfolioModalIframe.src = url;
-  portfolioModalUrl.textContent = url.replace(/^https?:\/\//, '');
-  portfolioModalExternal.href = url;
-  portfolioModal.classList.remove('hidden');
-  portfolioModal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePortfolioModal() {
-  if (!portfolioModal) return;
-  portfolioModal.classList.add('hidden');
-  portfolioModal.setAttribute('aria-hidden', 'true');
-  portfolioModalIframe.src = '';
-  document.body.style.overflow = '';
-}
-
-if (portfolioModalClose) portfolioModalClose.addEventListener('click', closePortfolioModal);
-if (portfolioModalBackdrop) portfolioModalBackdrop.addEventListener('click', closePortfolioModal);
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePortfolioModal(); });
 
 /* ===== Charts ===== */
 window.addEventListener('load', () => {
