@@ -1,6 +1,28 @@
 User-agent: *
 Allow: /
-
 Disallow: /checkout.html
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /checkout.html
+
+# Block known bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
 
 Sitemap: https://www.webdo24.cz/sitemap.xml

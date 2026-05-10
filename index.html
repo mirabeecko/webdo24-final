@@ -57,21 +57,66 @@
         "url": "https://www.webdo24.cz",
         "name": "WebDo24.cz",
         "description": "Tvorba profesionálních webových stránek do 24 hodin s garancí vrácení peněz",
-        "inLanguage": "cs"
+        "inLanguage": "cs",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.webdo24.cz/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": ["Organization", "ProfessionalService"],
         "@id": "https://www.webdo24.cz/#organization",
         "name": "WebDo24.cz",
+        "alternateName": "WebDo24",
         "url": "https://www.webdo24.cz",
+        "logo": "https://www.webdo24.cz/og-image.jpg",
+        "image": "https://www.webdo24.cz/og-image.jpg",
         "description": "Profesionální tvorba webových stránek do 24 hodin. Garance termínu nebo platíte 0 Kč. Pre-autorizace chrání váš rozpočet.",
         "telephone": "+420735870711",
         "email": "info@webdo24.cz",
+        "founder": { "@type": "Person", "name": "Miroslav Brožek" },
         "address": { "@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ" },
         "areaServed": { "@type": "Country", "name": "Česká republika" },
-        "serviceType": ["Tvorba webových stránek", "Webdesign", "Web development"],
+        "serviceType": ["Tvorba webových stránek", "Webdesign", "Web development", "SEO"],
         "priceRange": "1990 Kč – 49900 Kč",
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5", "worstRating": "1" }
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Balíčky tvorby webových stránek",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Model START", "price": "1990", "priceCurrency": "CZK", "url": "https://www.webdo24.cz/model-start.html" },
+            { "@type": "Offer", "name": "Model PRO", "price": "19900", "priceCurrency": "CZK", "url": "https://www.webdo24.cz/model-pro.html" },
+            { "@type": "Offer", "name": "Model ELITE", "price": "49900", "priceCurrency": "CZK", "url": "https://www.webdo24.cz/model-elite.html" }
+          ]
+        },
+        "sameAs": [
+          "https://www.facebook.com/webdo24",
+          "https://www.instagram.com/webdo24.cz"
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "Jak funguje tvorba webu za 24 hodin",
+        "description": "Tři kroky od dotazníku k živému webu na vaší doméně.",
+        "totalTime": "PT24H",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Rezervace a Hold", "text": "Potvrdíte termín a autorizujete pre-autorizaci platby. Částka se zablokuje na kartě, peníze v úschově." },
+          { "@type": "HowToStep", "position": 2, "name": "Produkce v sandboxu", "text": "Web vzniká na testovací adrese, máte přístup 24/7 a sledujete pokrok v reálném čase." },
+          { "@type": "HowToStep", "position": 3, "name": "Schválení a Release", "text": "Klikem uvolníte platbu a získáte Release Key. Nesplnili jsme? Hold zaniká, 0 Kč riziko." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.webdo24.cz/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Opravdu dostanu web do 24 hodin?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Garantujeme doručení náhledu do 24 hodin od vyplnění dotazníku. Průměrná doba dodání je 18 hodin. Po schválení web spouštíme na vaší doméně do 2–4 hodin. Pokud nestíháme, vrátíme zálohu v plné výši." } },
+          { "@type": "Question", "name": "Co je pre-autorizace platby (Hold)?", "acceptedAnswer": { "@type": "Answer", "text": "Pre-autorizace je bankovní mechanismus, který zablokuje částku na vaší kartě bez toho, aby ji stáhl. Peníze odejdou až poté, co vy sami schválíte hotový web. Pokud nedodáme do 24 hodin, Hold automaticky zaniká a neplatíte nic." } },
+          { "@type": "Question", "name": "Mohu web přepracovat, pokud nebudu spokojený?", "acceptedAnswer": { "@type": "Answer", "text": "Všechny modely zahrnují 1 komplexní kolo úprav zdarma po odevzdání webu. Lze doladit barvy, přepsat texty nebo upravit strukturu menu." } },
+          { "@type": "Question", "name": "Jaké technologie používáte při tvorbě webů?", "acceptedAnswer": { "@type": "Answer", "text": "Moderní stack: HTML5, CSS3, vanilla JavaScript nebo Next.js/React. Hosting na CDN s EU edge uzly. Všechny weby mají Core Web Vitals v zelené zóně." } },
+          { "@type": "Question", "name": "Je možné přejít z nižšího modelu na vyšší?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, upgrade z START na PRO nebo ELITE je kdykoliv možný. Doplatek se vypočítá poměrově." } },
+          { "@type": "Question", "name": "Vytváříte weby pro celou Českou republiku?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, pracujeme vzdáleně pro klienty z celé ČR. Veškerá komunikace probíhá online, web vzniká v sandboxu přístupném 24/7." } }
+        ]
       }
     ]
   }
@@ -154,8 +199,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="hero">
-  <div class="hero-bg" data-parallax="0.35"
-       style="background-image: url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=2400&q=80');"></div>
+  <div class="hero-bg" data-parallax="0.32"
+       style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2400&q=80');"></div>
+  <div class="hero-mesh"></div>
   <div class="hero-grid"></div>
 
   <div class="wrap">
@@ -183,7 +229,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+
+  <a href="#jak" class="scroll-hint" aria-label="Posunout dolů">
+    <span>Posunout</span>
+    <span class="line"></span>
+  </a>
 </section>
+
+<!-- ========== TRUST MARQUEE ========== -->
+<div class="marquee" aria-label="Co všechno dostanete">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="ic">⚡</span>Dodání do 24 hodin</span>
+    <span class="marquee-item"><span class="ic">🔒</span>Bankovní úschova</span>
+    <span class="marquee-item"><span class="ic">⚙️</span>Next.js / React</span>
+    <span class="marquee-item"><span class="ic">🌍</span>EU Edge hosting</span>
+    <span class="marquee-item"><span class="ic">📈</span>Core Web Vitals zelené</span>
+    <span class="marquee-item"><span class="ic">🔑</span>Plné vlastnictví kódu</span>
+    <span class="marquee-item"><span class="ic">📊</span>GA4 + Search Console</span>
+    <span class="marquee-item"><span class="ic">✉️</span>Profesionální e-mail</span>
+    <!-- duplicate for infinite loop -->
+    <span class="marquee-item"><span class="ic">⚡</span>Dodání do 24 hodin</span>
+    <span class="marquee-item"><span class="ic">🔒</span>Bankovní úschova</span>
+    <span class="marquee-item"><span class="ic">⚙️</span>Next.js / React</span>
+    <span class="marquee-item"><span class="ic">🌍</span>EU Edge hosting</span>
+    <span class="marquee-item"><span class="ic">📈</span>Core Web Vitals zelené</span>
+    <span class="marquee-item"><span class="ic">🔑</span>Plné vlastnictví kódu</span>
+    <span class="marquee-item"><span class="ic">📊</span>GA4 + Search Console</span>
+    <span class="marquee-item"><span class="ic">✉️</span>Profesionální e-mail</span>
+  </div>
+</div>
 
 <!-- ========== STATS ========== -->
 <section class="stats tight">
@@ -231,15 +305,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ========== PARALLAX BREAK ========== -->
+<!-- ========== PARALLAX BREAK — GARANCE TERMÍNU (clock/precision) ========== -->
 <section class="parallax" style="padding: clamp(120px, 14vw, 200px) 0;">
   <div class="parallax-bg" data-parallax="0.3"
-       style="background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2400&q=80');"></div>
+       style="background-image: url('https://images.unsplash.com/photo-1495364141860-b0d03eccd065?auto=format&fit=crop&w=2400&q=80');"></div>
 
   <div class="wrap-tight rev" style="text-align: center;">
     <p class="eyebrow">Smluvní závazek</p>
     <h2 style="margin-bottom: 24px;">Nestihneme termín?<br>Platíte 0 Kč. Automaticky.</h2>
-    <p class="lead" style="margin: 0 auto; color: rgba(255,255,255,.8);">
+    <p class="lead" style="margin: 0 auto; color: rgba(255,255,255,.85);">
       Garance termínu není marketingový slib. Je to bankovní mechanismus.
       Hold se po 24 hodinách automaticky ruší — bez reklamací, bez telefonátů, bez výjimek.
     </p>
@@ -254,36 +328,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head rev">
       <p class="eyebrow">Portfolio</p>
-      <h2>Weby, které už vydělávají</h2>
+      <h2>Weby, které už <span class="grad-text">vydělávají</span></h2>
       <p class="lead" style="margin-top: 18px;">
-        Každý byl dodán do 24 hodin — včetně textů, designu a nastavení hostingu.
+        Živé screenshoty stránek, které jsme dodali do 24 hodin. Klikněte pro náhled.
       </p>
     </div>
 
     <div class="work-grid">
       <div class="work rev" onclick="openPortfolio('https://dousa-elektro.cz','Dousa Elektro')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Dousa Elektro</span><span>Řemeslník</span></div>
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">dousa-elektro.cz</div></div>
+        <div class="work-frame"><iframe src="https://dousa-elektro.cz" loading="lazy" title="Dousa Elektro"></iframe></div>
+        <div class="work-meta"><span>Dousa Elektro</span><span class="tag-mini">Řemeslník</span></div>
       </div>
+
       <div class="work rev" style="transition-delay:.08s" onclick="openPortfolio('https://ninja.webdo24.cz','Ninja')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Ninja</span><span>Služby</span></div>
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">ninja.webdo24.cz</div></div>
+        <div class="work-frame"><iframe src="https://ninja.webdo24.cz" loading="lazy" title="Ninja WebDo24"></iframe></div>
+        <div class="work-meta"><span>Ninja</span><span class="tag-mini">Služby</span></div>
       </div>
+
       <div class="work rev" style="transition-delay:.16s" onclick="openPortfolio('https://web.webdo24.cz/truhlarstvi-drevorez/index.html','Truhlářství Dřevořez')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Truhlářství Dřevořez</span><span>Řemeslník</span></div>
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">web.webdo24.cz/truhlarstvi-drevorez</div></div>
+        <div class="work-frame"><iframe src="https://web.webdo24.cz/truhlarstvi-drevorez/index.html" loading="lazy" title="Truhlářství Dřevořez"></iframe></div>
+        <div class="work-meta"><span>Truhlářství Dřevořez</span><span class="tag-mini">Řemeslník</span></div>
       </div>
+
       <div class="work rev" onclick="openPortfolio('https://paddleboardy-milada.cz','Paddleboardy Milada')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1530870110042-98b2cb110834?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Paddleboardy Milada</span><span>Sport &amp; Wellness</span></div>
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">paddleboardy-milada.cz</div></div>
+        <div class="work-frame"><iframe src="https://paddleboardy-milada.cz" loading="lazy" title="Paddleboardy Milada"></iframe></div>
+        <div class="work-meta"><span>Paddleboardy Milada</span><span class="tag-mini">Sport &amp; Wellness</span></div>
       </div>
-      <div class="work rev" style="transition-delay:.08s" onclick="openPortfolio('https://web.webdo24.cz/','Modelový web')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Studio Vlna</span><span>Firma</span></div>
+
+      <div class="work rev" style="transition-delay:.08s" onclick="openPortfolio('https://web.webdo24.cz/','Studio Vlna')">
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">studio-vlna.cz</div></div>
+        <div class="work-frame img" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="work-meta"><span>Studio Vlna</span><span class="tag-mini">Firma</span></div>
       </div>
-      <div class="work rev" style="transition-delay:.16s" onclick="openPortfolio('https://web.webdo24.cz/','Kavárna model')">
-        <div class="work-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="work-meta"><span style="color:var(--ink); font-weight:600;">Kavárna Artisan</span><span>Gastro</span></div>
+
+      <div class="work rev" style="transition-delay:.16s" onclick="openPortfolio('https://web.webdo24.cz/','Kavárna Artisan')">
+        <div class="work-chrome"><span></span><span></span><span></span><div class="addr">kavarna-artisan.cz</div></div>
+        <div class="work-frame img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80');"></div>
+        <div class="work-meta"><span>Kavárna Artisan</span><span class="tag-mini">Gastro</span></div>
       </div>
     </div>
   </div>
@@ -307,7 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head center rev">
       <p class="eyebrow">Ceník</p>
-      <h2>Vyberte model,<br>který sedí vám</h2>
+      <h2>Vyberte model,<br><span class="grad-text">který sedí vám</span></h2>
       <p class="lead" style="margin: 18px auto 0;">
         Tři balíčky. Žádné skryté poplatky. Můžete kdykoliv přejít výš.
       </p>
@@ -369,10 +454,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ========== PARALLAX 2 ========== -->
+<!-- ========== PARALLAX 2 — CO JE V CENĚ (analytics / nástroje) ========== -->
 <section class="parallax" style="padding: clamp(100px, 12vw, 160px) 0;">
   <div class="parallax-bg" data-parallax="0.25"
-       style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2400&q=80');"></div>
+       style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2400&q=80');"></div>
   <div class="wrap-tight rev" style="text-align: center;">
     <p class="eyebrow">Co je v ceně</p>
     <h2 style="margin-bottom: 24px;">Žádné překvapení.<br>Žádné vícenáklady.</h2>
