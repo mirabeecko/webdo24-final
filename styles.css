@@ -17,6 +17,23 @@
   --teal:      #007a6e;       /* sekundární akcent (důvěra) */
   --gold:      #c8a96a;
 
+  /* Pastelové akcenty pro kontury a highlighty */
+  --mint:      #6dd6b8;       /* mint - online, "v provozu" */
+  --mint-soft: #e7f7f1;
+  --mint-line: #b6e8d6;
+  --peach:     #ffb89a;       /* peach - akcent novinky */
+  --peach-soft:#fff1e8;
+  --peach-line:#ffd8c2;
+  --sky:       #8ec7f5;       /* sky - info, tip */
+  --sky-soft:  #e9f3fc;
+  --sky-line:  #c4dff4;
+  --lavender:  #c5b8ed;       /* lavender - bonus */
+  --lav-soft:  #f1eefb;
+  --lav-line:  #ddd2f3;
+  --sun:       #f5d77a;       /* sun - výhoda */
+  --sun-soft:  #fdf5db;
+  --sun-line:  #ecd693;
+
   --radius:    14px;
   --radius-lg: 22px;
   --shadow-sm: 0 1px 2px rgba(10,10,10,.04), 0 1px 1px rgba(10,10,10,.03);
@@ -830,6 +847,164 @@ section.tight { padding: clamp(56px, 7vw, 96px) 0; }
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ====== Highlight system — pastelové kontury + textové zvýraznění ====== */
+.hl {
+  font-weight: 700;
+  color: var(--ink);
+  background-image: linear-gradient(transparent 65%, rgba(245,215,122,.55) 65%);
+  background-repeat: no-repeat;
+  padding: 0 2px;
+}
+.hl-coral { background-image: linear-gradient(transparent 65%, rgba(255,184,154,.7) 65%); }
+.hl-mint  { background-image: linear-gradient(transparent 65%, rgba(109,214,184,.5) 65%); }
+.hl-sky   { background-image: linear-gradient(transparent 65%, rgba(142,199,245,.55) 65%); }
+.hl-lav   { background-image: linear-gradient(transparent 65%, rgba(197,184,237,.55) 65%); }
+
+/* Tučné decentní zvýraznění */
+strong, b { font-weight: 700; color: var(--ink); }
+.bold-emph { font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
+
+/* Pastelové outline badges */
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  font-size: 12.5px; font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-2);
+  background: #fff;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ink-3); }
+.badge.mint   { border-color: var(--mint-line);   background: var(--mint-soft);   color: #0a5e4a; }
+.badge.mint::before   { background: var(--mint); }
+.badge.peach  { border-color: var(--peach-line);  background: var(--peach-soft);  color: #8a3a0e; }
+.badge.peach::before  { background: var(--peach); }
+.badge.sky    { border-color: var(--sky-line);    background: var(--sky-soft);    color: #1d4f78; }
+.badge.sky::before    { background: var(--sky); }
+.badge.lav    { border-color: var(--lav-line);    background: var(--lav-soft);    color: #4a3a78; }
+.badge.lav::before    { background: var(--lavender); }
+.badge.sun    { border-color: var(--sun-line);    background: var(--sun-soft);    color: #6e5410; }
+.badge.sun::before    { background: var(--sun); }
+.badge.coral  { border-color: rgba(255,59,59,.3); background: rgba(255,59,59,.08); color: #b41818; }
+.badge.coral::before  { background: var(--accent); }
+
+/* Callout boxy s pastelovými konturami */
+.callout {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px 22px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+.callout .icon {
+  flex-shrink: 0;
+  width: 38px; height: 38px; border-radius: 10px;
+  display: grid; place-items: center;
+  font-size: 18px;
+  background: var(--bg-alt); color: var(--ink);
+}
+.callout p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.callout b { color: var(--ink); }
+.callout.mint  { border-color: var(--mint-line);   background: var(--mint-soft);  }
+.callout.mint  .icon { background: var(--mint);   color: #0a4a3a; }
+.callout.peach { border-color: var(--peach-line);  background: var(--peach-soft); }
+.callout.peach .icon { background: var(--peach);  color: #6e2e0a; }
+.callout.sky   { border-color: var(--sky-line);    background: var(--sky-soft);   }
+.callout.sky   .icon { background: var(--sky);    color: #1d4f78; }
+.callout.lav   { border-color: var(--lav-line);    background: var(--lav-soft);   }
+.callout.lav   .icon { background: var(--lavender); color: #3a2a6e; }
+.callout.sun   { border-color: var(--sun-line);    background: var(--sun-soft);   }
+.callout.sun   .icon { background: var(--sun);    color: #5a4410; }
+
+/* ====== Pulse green dot — "online v pracovní době" ====== */
+.live-dot {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600;
+  color: var(--mint);
+}
+.live-dot::before {
+  content: "";
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 0 rgba(109,214,184,.7);
+  animation: livePulse 1.6s infinite;
+}
+.live-dot.off { color: var(--ink-3); }
+.live-dot.off::before { background: var(--ink-3); animation: none; box-shadow: none; }
+@keyframes livePulse {
+  0%   { box-shadow: 0 0 0 0   rgba(109,214,184,.7); }
+  60%  { box-shadow: 0 0 0 14px rgba(109,214,184,0); }
+  100% { box-shadow: 0 0 0 0   rgba(109,214,184,0); }
+}
+
+/* Velká blikající telefon ikona vedle phone */
+.phone-live {
+  position: relative; display: inline-grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--mint); color: #0a4a3a;
+  font-size: 18px;
+  box-shadow: 0 0 0 0 rgba(109,214,184,.7);
+  animation: phoneRing 1.4s infinite;
+}
+.phone-live.off {
+  background: var(--bg-alt); color: var(--ink-3);
+  animation: none; box-shadow: none;
+}
+@keyframes phoneRing {
+  0%   { box-shadow: 0 0 0 0   rgba(109,214,184,.65); transform: rotate(0deg); }
+  10%  { transform: rotate(-12deg); }
+  20%  { transform: rotate(12deg); }
+  30%  { transform: rotate(-8deg); }
+  40%  { transform: rotate(8deg); }
+  50%  { transform: rotate(0deg); }
+  70%  { box-shadow: 0 0 0 22px rgba(109,214,184,0); }
+  100% { box-shadow: 0 0 0 0    rgba(109,214,184,0); }
+}
+
+/* Výhody grid — pastelové karty */
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.adv {
+  position: relative;
+  padding: 24px;
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.adv:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.adv .ico {
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  font-size: 20px;
+  margin-bottom: 16px;
+  background: var(--bg-alt); color: var(--ink);
+}
+.adv h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; line-height: 1.3; letter-spacing: -0.015em; }
+.adv p  { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+.adv b  { color: var(--ink); }
+
+.adv.mint  { border-color: var(--mint-line);  background: linear-gradient(180deg, var(--mint-soft), #fff 70%); }
+.adv.mint  .ico { background: var(--mint);    color: #0a4a3a; }
+.adv.peach { border-color: var(--peach-line); background: linear-gradient(180deg, var(--peach-soft), #fff 70%); }
+.adv.peach .ico { background: var(--peach);   color: #6e2e0a; }
+.adv.sky   { border-color: var(--sky-line);   background: linear-gradient(180deg, var(--sky-soft), #fff 70%); }
+.adv.sky   .ico { background: var(--sky);     color: #1d4f78; }
+.adv.lav   { border-color: var(--lav-line);   background: linear-gradient(180deg, var(--lav-soft), #fff 70%); }
+.adv.lav   .ico { background: var(--lavender);color: #3a2a6e; }
+.adv.sun   { border-color: var(--sun-line);   background: linear-gradient(180deg, var(--sun-soft), #fff 70%); }
+.adv.sun   .ico { background: var(--sun);     color: #5a4410; }
+.adv.coral { border-color: rgba(255,59,59,.25); background: linear-gradient(180deg, rgba(255,59,59,.06), #fff 70%); }
+.adv.coral .ico { background: var(--accent);  color: #fff; }
+
+@media (max-width: 1024px) { .advantages { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px)  { .advantages { grid-template-columns: 1fr; } }
 
 /* ====== Section transitions ====== */
 .section-divider {

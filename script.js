@@ -87,6 +87,43 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   });
 })();
 
+/* ===== Hot Line status — blinkající zelená v pracovní době ===== */
+(function hotlineStatus() {
+  const phone = $('#phoneLive');
+  const text  = $('#hotline-status-text');
+  if (!phone && !text) return;
+
+  function update() {
+    // Praha čas (Europe/Prague, ale spoléháme na local time klienta)
+    const now = new Date();
+    const day = now.getDay(); // 0 = neděle, 6 = sobota
+    const hour = now.getHours();
+    const min  = now.getMinutes();
+    const time = hour + min / 60;
+
+    let open = false;
+    let label = '';
+    if (day >= 1 && day <= 5) {
+      // Pondělí–Pátek 8:00–20:00
+      open = time >= 8 && time < 20;
+      label = open ? 'Právě online · zvedáme telefon' : 'Mimo pracovní dobu · zavoláme zpět';
+    } else {
+      // Sobota / Neděle 10:00–18:00
+      open = time >= 10 && time < 18;
+      label = open ? 'Víkendová pohotovost · jsme tu' : 'Víkendová pauza · zavoláme zítra';
+    }
+
+    if (text) {
+      text.textContent = label;
+      const dot = text.parentElement;
+      if (dot) dot.classList.toggle('off', !open);
+    }
+    if (phone) phone.classList.toggle('off', !open);
+  }
+  update();
+  setInterval(update, 60000);
+})();
+
 /* ===== Slot countdown (resets at midnight) ===== */
 (function slotCountdown() {
   const el = $('#slot-timer');

@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Objednávka — Rezervovat slot do 24 hodin | WebDo24.cz</title>
-  <meta name="description" content="Rezervujte si dnešní slot. Pre-autorizace platby zajišťuje 0 Kč riziko. Náhled webu do 24 hodin. Po odeslání se vám ozveme do 30 minut.">
+  <meta name="description" content="Rezervujte si dnešní slot. Snadné a rychlé. Pre-autorizace platby zajišťuje 0 Kč riziko. Náhled webu do 24 hodin.">
   <meta name="author" content="Miroslav Brožek | webdo24.cz">
   <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#ffffff">
@@ -85,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="eyebrow rev">Rezervovat slot · 0 Kč riziko</p>
     <h1 class="rev">Náhled webu<br><span class="grad-text">zítra ráno.</span></h1>
     <p class="lead rev" style="margin-top: 20px;">
-      Po odeslání objednávky se vám ozveme do 30 minut. Pre-autorizace platby se aktivuje až po odsouhlasení briefu.
+      <b>Je to snadné a rychlé.</b> Po odeslání se vám ozveme zpět. Pre-autorizace platby se aktivuje až po odsouhlasení briefu.
       Pokud nedodáme do 24 hodin, neplatíte ani korunu.
     </p>
   </div>
@@ -154,7 +154,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ol style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; counter-reset: step;">
             <li style="display: flex; gap: 14px; counter-increment: step; font-size: 14px; color: var(--ink-2); line-height: 1.55;">
               <span style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:600; font-size:13px;">1</span>
-              <div><b style="color:var(--ink)">Ozveme se do 30 min</b><br>WhatsApp nebo telefonát, projedeme brief.</div>
+              <div><b style="color:var(--ink)">Ozveme se zpět</b><br>WhatsApp nebo telefonát, projedeme brief — snadno a rychle.</div>
             </li>
             <li style="display: flex; gap: 14px; counter-increment: step; font-size: 14px; color: var(--ink-2); line-height: 1.55;">
               <span style="flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-weight:600; font-size:13px;">2</span>
@@ -234,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = 'Odesílám…';
     btn.disabled = true;
     setTimeout(() => {
-      btn.textContent = '✓ Odesláno — ozveme se do 30 minut';
+      btn.textContent = '✓ Odesláno — brzy se ozveme';
       btn.style.background = 'var(--teal)';
       setTimeout(() => location.href = 'https://billing.webdo24.cz/?ref=checkout', 1800);
     }, 900);
