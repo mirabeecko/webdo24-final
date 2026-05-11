@@ -261,8 +261,8 @@ window.handleContact = handleContact;
     el.classList.remove('in'); el.classList.add('out');
     setTimeout(() => el.remove(), 400);
   }
-  const RHYTHM = [9000, 7000, 14000, 11000, 6000];
+  const RHYTHM = [18000, 14000, 28000, 22000, 12000];
   let i = 0;
   function schedule() { setTimeout(show, RHYTHM[i++ % RHYTHM.length]); }
-  setTimeout(show, 4500);
+  setTimeout(show, 9000);
 })();
